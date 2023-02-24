@@ -28,13 +28,13 @@ img[src="img/logo.svg"] {
 	min-width: 60px;
 	max-height: 60px;
 	border-radius: 50%;
-	flex-grow: 1;
+	flex-grow: 0;
 }
 
 .container {
 	display: grid;
 	grid-template-columns: 1fr 4fr;
-	grid-template-rows: 1fr 5fr;
+	grid-template-rows: auto auto;
 	grid-template-areas: 
 		"dash header"
 		"dash main";
@@ -69,13 +69,79 @@ li h4,
 }
 
 
-/**/
 .header {
 	background-color: floralwhite;
 	grid-area: header;
-}
-/**/
+	padding: 20px;
 
+}
+
+.header-first-line {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	gap: 20px;
+}
+
+.search {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-right: auto;
+}
+
+.search input {
+	border-radius: 50px;
+	background-color: lightgrey;
+	border: none;
+	max-width: 500px;
+	padding: 10px;
+	flex-grow: 1;
+}
+
+.other-side-search {
+	/*flex-grow: 1;*/
+	display: flex;
+	/*justify-content: center;*/
+	align-items: center;
+	gap: 20px;
+}
+
+.header-second-line {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.header-second-line h4 {
+	margin: 0;
+	padding: 0;
+}
+
+.greeting {
+	margin-right: auto;
+	flex-basis: 40%;
+	flex-grow: 1;
+}
+
+.btns {
+	display: flex;
+	justify-content: space-evenly;
+	flex-grow: 1;
+	gap: 10px;
+}
+
+button {
+	border-radius: 40px;
+	border: none;
+	background-color: deepskyblue;
+	color: white;
+	padding: 7px 30px;
+}
 
 
 .main {
@@ -83,10 +149,15 @@ li h4,
 	padding-right: 30px;
 	background-color: gainsboro;
 	grid-area: main;
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	grid-template-rows: auto;
+	display: flex;
+	flex-wrap: wrap;
+	/*grid-template-columns: 3fr 1fr;*/
 	gap: 20px;
+}
+
+.left-side-main {
+	flex-basis: 40%;
+	flex-grow: 1;
 }
 
 .project-cards-container {
@@ -96,10 +167,6 @@ li h4,
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-template-rows: repeat(3, 1fr);
 	gap: 20px;
-}
-
-#project-title {
-	grid-column: 1;
 }
 
 .project-cards {
@@ -117,17 +184,8 @@ li h4,
 	text-align: right;
 }
 
-
-
-
-#right-side-title {
-	grid-column: 2;
-	grid-row: 1;
-}
-
-#right-side-content {
-	grid-column: 2;
-	grid-row: 2;
+.right-side-main {
+	width: 250px;
 }
 
 .announce-container {
